@@ -14,31 +14,43 @@ const Navbar = () => {
         sehrefpen(!open)
     }
     return (
-      <nav className="bg-emerald-500 flex justify-between ">
-      <div className="flex gap-5 px-3">
-         <Link href={'/'}>
+      <nav className="bg-emerald-500 flex justify-between  p-2">
+      <div className="flex gap-5 ">
+        <ul className='flex absolute'>
+            <li  className=" pb-5 relative bottom-6">
+            <Link href={'/'}  >
          
-       <Image src={logo}
-      alt="Picture of the author"
-      width={60}
-      height={30}/>
+         <Image src={logo}
+        alt="Picture of the author"
+        width={100}
+        height={40}/>
+           </Link>
+            </li>
+            <li  className="btn btn-ghost mt-3 ">
+            <Link href={'/'} >
+         
+       
+         <h2 className=" text-white  text-font-bold">Movie house</h2>
          </Link>
-         <h2 className="mt-4 font-bold">Tanvir</h2>
+            </li>
+        </ul>
+       
+        
       </div>
       {/* for computer  */}
-      <div className="hidden md:block mt-4 px-3">
-         <ul className="flex gap-5 font-bold">
-             <li>
+      <div className="hidden md:block mt-2 px-3">
+         <ul className="flex gap-5 font-bold text-white ">
+             <li  className="btn btn-ghost">
                  <Link href={'/'}>
                  Home
                  </Link>
              </li>
-             <li>
+             <li  className="btn btn-ghost">
                  <Link href={'/about'}>
                  About
                  </Link>
              </li>
-             <li>
+             <li  className="btn btn-ghost">
                  <Link href={'/contact'}>
                  Contact
                  </Link>
@@ -64,16 +76,16 @@ const Navbar = () => {
          <Image src={logo}
         alt="Picture of the author"
         width={150}
-        height={50}/>
+        height={70}/>
            </Link>
                 </div>
-                <ul className=" gap-5 font-bold px-2">
-                        <li>
+                <ul className=" gap-10 font-bold px-8 text-white ">
+                        <li >
                             <Link href={'/'}>
                             Home
                             </Link>
                         </li>
-                        <li>
+                        <li className='py-5'>
                             <Link href={'/about'}>
                             About
                             </Link>
