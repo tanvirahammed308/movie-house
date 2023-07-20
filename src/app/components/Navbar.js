@@ -1,46 +1,96 @@
-import React from 'react';
+'use client'
 
+import Link from 'next/link';
+import React, { useState } from 'react';
+import logo from '../../../public/img/logo1.png'
+
+
+
+import { FaBars, FaTimes } from 'react-icons/fa';
+import Image from 'next/image';
 const Navbar = () => {
+  const [open , sehrefpen]=useState(false);
+    const hrefggleNav=()=>{
+        sehrefpen(!open)
+    }
     return (
-        <div className="navbar bg-base-100">
-        <div className="navbar-start">
-          <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-            </label>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-              <li><a>Item 1</a></li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </li>
-              <li><a>Item 3</a></li>
-            </ul>
-          </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
-        </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li><a>Item 1</a></li>
-            <li tabIndex={0}>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </details>
-            </li>
-            <li><a>Item 3</a></li>
-          </ul>
-        </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
-        </div>
+      <nav className="bg-emerald-500 flex justify-between ">
+      <div className="flex gap-5 px-3">
+         <Link href={'/'}>
+         
+       <Image src={logo}
+      alt="Picture of the author"
+      width={60}
+      height={30}/>
+         </Link>
+         <h2 className="mt-4 font-bold">Tanvir</h2>
       </div>
+      {/* for computer  */}
+      <div className="hidden md:block mt-4 px-3">
+         <ul className="flex gap-5 font-bold">
+             <li>
+                 <Link href={'/'}>
+                 Home
+                 </Link>
+             </li>
+             <li>
+                 <Link href={'/about'}>
+                 About
+                 </Link>
+             </li>
+             <li>
+                 <Link href={'/contact'}>
+                 Contact
+                 </Link>
+             </li>
+         </ul>
+      </div>
+      {/* for mobile  */}
+
+      <div onClick={hrefggleNav} className="md:hidden mt-4 pr-2 ">
+         {
+             open ? <FaTimes /> : <FaBars />
+         }
+
+      </div>
+      {
+         open && 
+
+         <div className="absolute w-[250px] h-full bg-green-500 p-5 md:hidden" >
+                <div className='px-10 '>
+                <div className='py-10'>
+                <Link href={'/'}>
+         
+         <Image src={logo}
+        alt="Picture of the author"
+        width={150}
+        height={50}/>
+           </Link>
+                </div>
+                <ul className=" gap-5 font-bold px-2">
+                        <li>
+                            <Link href={'/'}>
+                            Home
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href={'/about'}>
+                            About
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href={'/contact'}>
+                            Contact
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+                 </div>
+      }
+
+     
+     </nav>
+     
     );
 };
 
