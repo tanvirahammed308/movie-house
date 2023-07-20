@@ -12,10 +12,10 @@ const Navbar = () => {
     sehrefpen(!open);
   };
   return (
-    <nav className="bg-emerald-500 flex justify-between  md:p-3 p-7 ">
+    <nav className="bg-emerald-500 flex justify-between  md:p-3 p-7  ">
       <div className="flex gap-5 ">
         <ul className="flex absolute">
-          <li className=" pb-5 relative bottom-6  right-5">
+          <li className=" pb-5 relative bottom-6  left-2">
             <Link href={"/"}>
               <Image
                 src={logo}
@@ -25,11 +25,11 @@ const Navbar = () => {
               />
             </Link>
           </li>
-          <li className="md:btn md:btn-ghost md:mt-3 mt-2 ">
+          {/* <li className="md:btn md:btn-ghost md:mt-3 mt-2 ">
             <Link href={"/"}>
               <h2 className=" text-white  text-font-bold md:block pl-7">Movie house</h2>
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
       {/* for computer  */}
@@ -52,7 +52,7 @@ const Navbar = () => {
         {open ? <FaTimes /> : <FaBars />}
       </div>
       {open && (
-        <div className="absolute left-0 top-0 w-[255px] h-full bg-emerald-500 p-4 md:hidden">
+        <div className="absolute left-0 top-0 w-[255px] h-full bg-emerald-500 p-4 md:hidden z-30">
           <div className="px-10 ">
             <div className="py-10">
               <Link href={"/"}>

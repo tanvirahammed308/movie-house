@@ -1,9 +1,12 @@
 import React from 'react';
+import Carousel from './components/Home/Carousel';
+import Navbar from './components/Navbar';
 
 const page = () => {
   return (
     <div>
-    <h2>this is home page</h2>
+     
+   <Carousel></Carousel>
 
     </div>
   );
