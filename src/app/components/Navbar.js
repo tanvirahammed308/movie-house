@@ -15,7 +15,7 @@ const Navbar = () => {
     <nav className="bg-emerald-500 flex justify-between  md:p-3 p-7  ">
       <div className="flex gap-5 ">
         <ul className="flex absolute">
-          <li className=" pb-5 relative bottom-6  left-2">
+          <li className=" pb-5 relative bottom-6  right-5">
             <Link href={"/"}>
               <Image
                 src={logo}
@@ -54,7 +54,7 @@ const Navbar = () => {
       {open && (
         <div className="absolute left-0 top-0 w-[255px] h-full bg-emerald-500 p-4 md:hidden z-30">
           <div className="px-10 ">
-            <div className="py-10">
+            <div className="py-0">
               <Link href={"/"}>
                 <Image
                   src={logo}
